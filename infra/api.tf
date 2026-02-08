@@ -54,7 +54,7 @@ resource "aws_apigatewayv2_route" "chat_post" {
   route_key = "POST /chat"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_proxy.id}"
 
-  authorization_type = "AWS_IAM"
+  authorization_type = "NONE"
 }
 
 # OPTIONS route for preflight (CORS). No auth needed.
