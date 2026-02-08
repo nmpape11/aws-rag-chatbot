@@ -12,8 +12,8 @@ logger.setLevel(logging.INFO)
 br = boto3.client("bedrock-agent-runtime")
 
 # Configuration
-KB_ID = os.environ["TF_VAR_KB_ID"]
-MODEL_ARN = os.environ["TF_VAR_MODEL_ARN"]
+KB_ID = os.environ["KB_ID"]
+MODEL_ARN = os.environ["MODEL_ARN"]
 MAX_BODY_BYTES = int(os.environ.get("MAX_BODY_BYTES", "8000"))
 MAX_Q_CHARS = int(os.environ.get("MAX_Q_CHARS", "800"))
 

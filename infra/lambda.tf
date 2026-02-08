@@ -45,8 +45,20 @@ resource "aws_iam_role_policy" "lambda_inline" {
       # Scoped Bedrock KB
       {
         Effect   = "Allow",
-        Action   = ["bedrock:RetrieveAndGenerate"],
+        Action   = [
+            "bedrock:Retrieve",
+            "bedrock:RetrieveAndGenerate",
+        ],
         Resource = var.kb_arn
+      },
+      # Model invocation (LLM)
+      {
+        Effect = "Allow",
+        Action = [
+            "bedrock:InvokeModel",
+            "bedrock:InvokeModelWithResponseStream",
+        ],
+        Resource = var.model_arn
       }
     ]
   })
