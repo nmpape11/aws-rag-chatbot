@@ -82,7 +82,7 @@ resource "aws_lambda_function" "chat" {
       MODEL_ARN       = var.model_arn
       MAX_BODY_BYTES  = "8000"
       MAX_Q_CHARS     = "800"
-      ALLOWED_ORIGINS = "http://localhost:3000,http://localhost:5173"
+      ALLOWED_ORIGINS = "http://localhost:3000,http://localhost:5173,https://d1dxugycnobj97.cloudfront.net"
     }
   }
 

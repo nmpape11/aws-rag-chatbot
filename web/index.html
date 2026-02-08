@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 h-screen flex flex-col">
+    <header class="bg-white border-b p-4 flex justify-between items-center shadow-sm">
+        <h1 class="text-xl font-bold text-slate-800">RAG Knowledge Base</h1>
+        <div id="status" class="text-xs text-slate-400 font-mono">Loading config...</div>
+    </header>
+
+    <main id="chat-window" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <div class="bg-blue-100 p-3 rounded-lg max-w-[80%] self-start text-blue-900">
+            Hello! Ask me anything about the uploaded documents.
+        </div>
+    </main>
+
+    <footer class="p-4 bg-white border-t">
+        <form id="chat-form" class="max-w-4xl mx-auto flex gap-2">
+            <input type="text" id="user-input" placeholder="Type your question..." 
+                   class="flex-1 border rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                Send
+            </button>
+        </form>
+    </footer>
+
+    <script src="./src/main.js" type="module"></script>
+</body>
+</html>
