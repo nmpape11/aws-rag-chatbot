@@ -39,7 +39,7 @@ chatForm.onsubmit = async (e) => {
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: text }) // Adjust key to match your Lambda event
+            body: JSON.stringify({ q: text })
         });
         const data = await response.json();
         appendMessage('bot', data.answer || data.message || JSON.stringify(data));
